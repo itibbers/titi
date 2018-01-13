@@ -13,7 +13,7 @@ class HomeController extends Controller
     {
         $titi = "Hello titi😋!";
 
-        $this->view('index.php', [
+        $this->view('index', [
             'titi' => $titi
         ]);
     }

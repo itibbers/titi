@@ -16,7 +16,7 @@ class Controller
         if (file_exists(APP . 'view/public/header.php')) {
             require APP . 'view/public/header.php';
         }
-        require APP . 'view/portal/' . $this->getClassName() . $pagePath;
+        require APP . 'view/portal/' . $this->getClassName() . $pagePath . '.php';
         if (file_exists(APP . 'view/public/footer.php')) {
             require APP . 'view/public/footer.php';
         }

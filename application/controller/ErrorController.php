@@ -11,6 +11,6 @@ class ErrorController extends Controller
      */
     public function index()
     {
-        $this->view('index.php');
+        $this->view('index');
     }
 }
