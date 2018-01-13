@@ -1,15 +1,13 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Ive
- * Date: 13/01/2018
- * Time: 4:32 PM
- */
 
 namespace titi\controller;
 
+use titi\core\Controller;
 
-class TodoController
+class TodoController extends Controller
 {
-
+    public function index()
+    {
+        $this->view('index');
+    }
 }
