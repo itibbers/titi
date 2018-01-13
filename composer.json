@@ -1,0 +1,21 @@
+{
+    "name": "itibbers/titi",
+    "description": "titi - a simple security PHP framework.",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "itibbers",
+            "email": "jxn2014@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload":
+    {
+        "psr-4":
+        {
+            "titi\\" : "application/"
+        }
+    }
+}
