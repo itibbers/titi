@@ -1,27 +1,45 @@
 'use strict';
 
 Vue.component('todo-item', {
-    props: ['todo'],
-    template: '<li>{{ todo.text }}</li>'
-});
+    template: '\
+    <li>\
+      {{ title }}\
+      <button v-on:click="$emit(\'remove\')">X</button>\
+    </li>\
+  ',
+    props: ['title']
+})
 
-var app = new Vue({
+new Vue({
     el: '#app',
     data: {
-        groceryList: [
-            {id: 0, text: '蔬菜'},
-            {id: 1, text: '奶酪'},
-            {id: 2, text: '随便其它什么人吃的东西'}
+        newTodoText: '',
+        todos: [
+            {
+                id: 1,
+                title: 'Do the dishes',
+            },
+            {
+                id: 2,
+                title: 'Take out the trash',
+            },
+            {
+                id: 3,
+                title: 'Mow the lawn'
+            }
         ],
-        id: 3,
-        new_item: ""
+        nextTodoId: 4
     },
     methods: {
-        addItem: function () {
-            this.groceryList.push({
-                id: this.id++,
-                text: this.new_item
-            });
+        addNewTodo: function () {
+            this.todos.push({
+                id: this.nextTodoId++,
+                title: this.newTodoText
+            })
+            this.newTodoText = ''
+        },
+        menu: function () {
+            // alert('menu');
         }
     }
-});
+})

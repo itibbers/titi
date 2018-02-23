@@ -1,12 +1,13 @@
-<div id="app">
+<div id="app" @click.right.prevent="menu">
     <ol>
-        <todo-item v-for="item in groceryList"
-                   v-bind:todo="item"
-                   v-bind:key="item.id"
-                   v-bind:title="item.text">
-        </todo-item>
+        <li is="todo-item"
+            v-for="(todo, index) in todos"
+            v-bind:key="todo.id"
+            v-bind:title="todo.title"
+            v-on:remove="todos.splice(index, 1)"
+        ></li>
     </ol>
-    <input type="text" v-model="new_item">
-    <button v-on:click="addItem">增加</button>
-    <p>{{new_item}}</p>
+    <input v-model="newTodoText"
+           v-on:keyup.enter="addNewTodo"
+           placeholder="Add a todo">
 </div>
